@@ -1,0 +1,467 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500;700&display=swap');
+
+
+html {
+    font-family: 'Barlow', sans-serif;
+}
+body {
+  margin: 0px;
+}
+.name {
+  align-self: start;
+  float: left;
+}
+.first section {
+  width: 100%;
+}
+
+.visible-nav {
+  padding: 0px 0px 0px 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.menu-btn {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  top: 0px;
+  left: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu-btn-line {
+  background-color: black;
+  width: 30px;
+  height: 2px;
+  border-radius: 2px;
+  transition: all 0.5s ease-out;
+}
+.menu-btn-line::before,
+.menu-btn-line::after {
+  background-color: black;
+  position: absolute;
+  content: "";
+  width: 30px;
+  height: 2px;
+  border-radius: 2px;
+  transition: all 0.5s ease-in-out;
+}
+.menu-btn-line::before {
+  transform: translateY(-10px);
+}
+.menu-btn-line::after {
+  transform: translateY(10px);
+}
+.menu-btn.open .menu-btn-line {
+  transform: translateX(-50px);
+  background: transparent;
+}
+.menu-btn.open .menu-btn-line::before {
+  transform: rotate(45deg) translate(35px, -35px);
+}
+.menu-btn.open .menu-btn-line::after {
+  transform: rotate(-45deg) translate(35px, 35px);
+}
+.first {
+  background-image: url("images/bg-pattern-intro.svg");
+  background-color: hsl(356, 100%, 66%);
+  background-size: 400%;
+  overflow: hidden;
+  background-position: 40% 40%;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0px 0px 0px 50px;
+  width: 100%;
+}
+.first nav {
+  display: none; /* flex*/
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 80%;
+  max-width: 300px;
+  background-color: white;
+  top: 70px;
+  right: 15px;
+  border-radius: 5px;
+  transition: all 0.5s ease-in-out;
+  align-self: center;
+  z-index: 1;
+}
+.expand-con{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+
+}
+#visible {
+  transition: all 0.5s ease-in-out;
+  display: flex;
+}
+#login {
+    color: black;
+  border: 0px;
+  background: transparent;
+}
+.signup {
+  color: white;
+  width: 100px;
+  background-color: hsl(356, 100%, 66%);
+  padding: 10px;
+  margin: 0px 0px 10px 0px;
+}
+#learn {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+}
+.first nav p,
+.first nav section a {
+  display: block;
+  color: black;
+  text-align: center;
+  cursor: pointer;
+}
+.expand::after {
+  content: "no";
+  width: 20px;
+  background-image: url("images/icon-arrow-dark.svg");
+  background-size: 50%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  position: absolute;
+  float: right;
+  transform: rotate(180deg);
+  color: rgba(0, 0, 0, 0);
+}
+.first nav  section {
+  background-color: hsl(240, 17%, 93%);
+  width: 200%;
+  line-height: 30px;
+  transition: all 0.5s ease-in-out;
+}
+.expand + section {
+  display: none;
+}
+.active + section {
+  display: block;
+  transition: all 0.5s ease-in-out;
+}
+.active::after {
+  transform: rotate(0deg);
+}
+hr {
+  width: 80%;
+  color: hsl(240, 17%, 93%);
+  size: 5px;
+}
+.first h1 {
+  font-size: 170%;
+}
+.first h1,
+.first p {
+  text-align: center;
+  color: white;
+}
+.first button {
+  border-radius: 15px;
+  border: 1px solid white;
+  padding: 7px;
+  cursor: pointer;
+}
+.first span {
+  margin: 0px 0px 70px 0px;
+}
+.first span:nth-child(1) {
+  background-color: rgba(0, 0, 0, 0);
+  color: red;
+}
+.second {
+  margin: 50px 0px 0px 0px;
+}
+.second img {
+  width: 100%;
+}
+.second h1 {
+  text-align: center;
+}
+.third,
+.fourth {
+  padding: 0px 15px 0px 15px;
+}
+.second h1,
+.third h1,
+.fourth h1 {
+  font-size: 120%;
+  color: hsl(237, 17%, 21%);
+}
+.third h1,
+.third p,
+.fourth h1,
+.fourth p {
+  text-align: center;
+  color: hsl(237, 17%, 21%)
+}
+.fifth {
+  background-image: url(images/bg-pattern-circles.svg);
+  background-color: hsl(237, 17%, 21%);
+  background-size: 120%;
+  background-position: 50% -50%;
+  background-repeat: no-repeat;
+  padding: 0px 15px 40px 15px;
+  border-radius: 0px 60px 0px 60px;
+  color: white;
+  margin: 70px 0px 0px 0px;
+}
+.fifth h2,
+.fifth p {
+  text-align: center;
+  font-weight: 400;
+}
+.fifth p {
+  font-weight: 200;
+  font-size: 80%;
+  line-height: 20px;
+}
+.fifth img {
+  width: 100%;
+  margin: -70px 0px 0px 0px;
+}
+.laptop {
+  display: block;
+  width: 100%;
+  padding: 0px;
+  margin: 40px 0px 10px 0px;
+  transform: scale(1.3);
+}
+.sixth h1,
+.sixth p {
+  text-align: center;
+  color: hsl(237, 17%, 21%);
+}
+.sixth,
+.third,
+.fourth,
+.seventh {
+  padding: 10px;
+}
+.seventh h1,
+.seventh p {
+  text-align: center;
+  color: hsl(237, 17%, 21%);
+}
+footer div a {
+  display: block;
+  cursor: pointer;
+  color: white;
+  text-align: center;
+}
+footer div h4,
+footer h1 {
+  color: white;
+  text-align: center;
+}
+
+footer div a {
+  line-height: 25px;
+  font-size: 80%;
+}
+footer {
+  background-color: hsl(240, 10%, 16%);
+  border-radius: 0px 50px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 0px 40px 0px;
+}
+/* Destop view */
+
+@media screen and (min-width: 750px) {
+  .menu-btn-line {
+    display: none;
+  }
+  .first {
+    background-size: 200%;
+    background-position: 40% 45%;
+    border-radius: 0px 0px 0px 50px;
+    width: 100%;
+  }
+  .first nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: unset;
+    position: relative;
+    top: 0px;
+    background: transparent;
+    max-width: 100%;
+    align-self: unset;
+    padding: 0px 20px 0px 20px;
+  }
+  .visible-nav {
+    display: flex;
+    position: relative;
+    width: unset;
+    top: 0px;
+    width: 80%;
+    flex-direction: row;
+    align-items: center;
+    align-self: center;
+  }
+  .first nav p {
+    margin-right: 30px;
+    color: white;
+  }
+  .name {
+    align-self: unset;
+    float: unset;
+  }
+  .signup {
+    margin: 0px 0px 0px 20px;
+    padding: 5px 5px 5px 5px;
+    width: 100px;
+    background-color: white;
+    color: hsl(356, 100%, 66%);
+  }
+  #login {
+    margin: 0px 0px 0px 40%;
+    border: 0px;
+    color: white;
+  }
+  #learn {
+      background-color: transparent;
+      border: 1px solid white;
+  }
+  .first button {
+    border-radius: 15px;
+    border: unset;
+    padding: 5px 5px 5px 5px;
+    color: hsl(356, 100%, 66%);
+    cursor: pointer;
+  }
+  .merge-1 {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+  .bigcon-1 {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 0px 0px 0px 40px;
+    gap: 30px;
+  }
+  .second img {
+    width: 50vw;
+    height: inherit;
+    position: relative;
+    top: -100px;
+    align-self: end;
+  }
+  .expand::after {
+    background-image: url("images/icon-arrow-light.svg");
+  }
+  hr {
+    display: none;
+  }
+  .fifth {
+    background-image: url(images/bg-pattern-circles.svg);
+    background-color: hsl(237, 17%, 21%);
+    background-size: 30%;
+    background-position: 30px 50%;
+    background-repeat: no-repeat;
+    padding: 0px 15px 40px 15px;
+    border-radius: 0px 60px 0px 60px;
+    color: white;
+    margin: 0px 0px 0px 0px;
+  }
+  .fifth h2,
+  .fifth p {
+    text-align: left;
+    font-weight: 40px;
+    margin: 0px 0px 0px 40%;
+    padding: 40px 30px 0px 0px;
+  }
+  .fifth h2 {
+    margin-bottom: -30px;
+  }
+  .fifth p {
+    font-weight: 200;
+    font-size: 80%;
+    line-height: 20px;
+  }
+  .fifth img {
+    width: 30%;
+    float: left;
+    position: relative;
+    left: 0px;
+  }
+  .second p, .third h1,
+  .third p,
+  .fourth h1,
+  .fourth p, .sixth h1, .sixth p, .seventh h1, .seventh p {
+      text-align: left;
+  }
+  .merge-2 {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 20px 40px 20px 40px;
+  }
+  .laptop {
+    display: block;
+    width: 50%;
+    padding: 0px;
+    margin: 0px 0px 0px -20px;
+    transform: unset;
+  }
+  .bigcon-2 {
+    display: flex;
+    grid-template-columns: row;
+    width: 100%;
+  }
+  .expand-con {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+  .expand + section {
+      position: absolute;
+      z-index: 1;
+      top: 40px;
+      border-radius: 5px;
+  }
+  .first nav section {
+    background-color: hsl(240, 17%, 93%);
+    width: 120%;
+    line-height: 30px;
+    transition: all 0.5s ease-in-out;
+  }
+  .expand + section a {
+        font-size: 10px;  
+  }
+  .expand + section a:hover {
+      font-weight: 700;
+  }
+  footer {
+    padding: 0px 40px 40px 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: unset;
+    justify-content: unset;
+  }
+  footer div {
+      margin: 0px 
+  }
+
+}
